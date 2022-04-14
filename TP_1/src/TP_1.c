@@ -11,6 +11,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define porcentajedebito -10
+#define porcentajecredito 25
+#define bitcoin 4606954.55
+
+float Reglade3(float porcentaje,float valor);
+float cambiodedivisa(float valordecambio, float valor);
+
 int main(void) {
 
 	setbuf(stdout,NULL);
@@ -36,16 +43,16 @@ int main(void) {
 		scanf("%f", &PrecioLatam);
 
 	//Aereolineas
-	ValorDebitoA=PrecioAereolineas*0.9;
-	ValorCreditoA=PrecioAereolineas*1.25;
-	ValorBitcoinA=PrecioAereolineas/4606954.55;
+	ValorDebitoA=Reglade3(porcentajedebito,PrecioAereolineas);
+	ValorCreditoA=Reglade3(porcentajecredito,PrecioAereolineas);
+	ValorBitcoinA=cambiodedivisa(bitcoin, PrecioAereolineas);
 	PrecioxKmA=PrecioAereolineas/Km;
 
 
 	//Latam
-	ValorDebitoL=PrecioAereolineas*0.9;
-	ValorCreditoL=PrecioAereolineas*1.25;
-	ValorBitcoinL=PrecioAereolineas/4606954.55;
+	ValorDebitoL=Reglade3(porcentajedebito,PrecioLatam);
+	ValorCreditoL=Reglade3(porcentajecredito,PrecioLatam);
+	ValorBitcoinL=cambiodedivisa(bitcoin, PrecioLatam);
 	PrecioxKmL=PrecioLatam/Km;
 
 
@@ -72,4 +79,18 @@ int main(void) {
 	printf("La diferencia de precio es : %.2f\n",DiferenciaPrecio);
 
 	return EXIT_SUCCESS;
+}
+
+
+float Reglade3(float porcentaje,float valor){
+	float resultado;
+	resultado=valor*(porcentaje+100)/100;
+	return resultado;
+
+}
+
+float cambiodedivisa(float valordecambio, float valor){
+	float resultado;
+	resultado=valor/valordecambio;
+	return resultado;
 }

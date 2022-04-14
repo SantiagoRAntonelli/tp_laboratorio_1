@@ -6,6 +6,6 @@
  */
 
 
-//Reglade3(){
+//int Reglade3(){
 //	respuesta=Valor*(ProcentajeIncremento+100)/100;
 //}
