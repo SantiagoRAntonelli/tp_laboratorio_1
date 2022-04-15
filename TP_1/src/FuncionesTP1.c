@@ -11,7 +11,7 @@
 void imprimirresultados(float ValorDebitoL,float ValorCreditoL,float ValorBitcoinL,float PrecioxKmL,float ValorDebitoA,float ValorCreditoA,float ValorBitcoinA,float PrecioxKmA,float DiferenciaPrecio,float PrecioAereolineas,float PrecioLatam)
 {
 	printf("\n");
-		printf("Resultados\n");
+		printf("Resultados:\n");
 	printf("\n");
 		printf("Precio Latam: $%.2f\n",PrecioLatam);
 	printf("\n");

@@ -7,7 +7,7 @@
 
 #include "Validaciones.h"
 
-int input_getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado)
+int getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado)
 {
 	int rtn = 1;
 	float auxiliarFloat; //buffer
