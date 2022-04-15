@@ -7,7 +7,8 @@
  Description : Hello World in C, Ansi-style
  ============================================================================
  */
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "Calculos.h"
 #include "Validaciones.h"
 #include "FuncionesTP1.h"
@@ -28,21 +29,21 @@ int main(void) {
 
 	setbuf(stdout,NULL);
 	int opcion;
-	float Km;
+	float Km=0;
 	int KmVerificado;
-	float PrecioAereolineas;
+	float PrecioAereolineas=0;
 	int PrecioA;
-	float PrecioLatam;
+	float PrecioLatam=0;
 	int PrecioL;
-	float PrecioxKmA;
-	float PrecioxKmL;
-	float ValorDebitoA;
-	float ValorCreditoA;
-	float ValorBitcoinA;
-	float ValorDebitoL;
-	float ValorCreditoL;
-	float ValorBitcoinL;
-	float DiferenciaPrecio;
+	float PrecioxKmA=0;
+	float PrecioxKmL=0;
+	float ValorDebitoA=0;
+	float ValorCreditoA=0;
+	float ValorBitcoinA=0;
+	float ValorDebitoL=0;
+	float ValorCreditoL=0;
+	float ValorBitcoinL=0;
+	float DiferenciaPrecio=0;
 
 	do{
 		printf("1. Ingresar Kilómetros\n2. Ingresar Precio de Vuelos:\n3. Calcular todos los costos:\n4. Informar Resultados\n5. Carga forzada de datos\n6. Salir\n");
@@ -55,16 +56,19 @@ int main(void) {
 				}
 			break;
 		case 2:
+
 			PrecioA= getFloat("\nIngrese el valor del vuelo por Aereolineas: ",REINTENTOS,MIN,VALOR_MAX_VIAJE,"\nValor fuera de rango\n",&PrecioAereolineas);
 				if(PrecioA==1){
 						puts("Error en la carga de datos");
 					}
-				PrecioL= getFloat("\nIngrese el valor del vuelo por Latam: ",REINTENTOS,MIN,VALOR_MAX_VIAJE,"\nValor fuera de rango\n",&PrecioLatam);
+			PrecioL= getFloat("\nIngrese el valor del vuelo por Latam: ",REINTENTOS,MIN,VALOR_MAX_VIAJE,"\nValor fuera de rango\n",&PrecioLatam);
 				if(PrecioL==1){
 						puts("Error en la carga de datos");
 					}
+
 			break;
 		case 3:
+			if(Km != 0 && PrecioAereolineas != 0 && PrecioLatam != 0){
 			//Aereolineas
 				Reglade3(PORCENTAJE_DEBITO,PrecioAereolineas,&ValorDebitoA);
 				Reglade3(PORCENTAJE_CREDITO,PrecioAereolineas,&ValorCreditoA);
@@ -80,6 +84,12 @@ int main(void) {
 
 				Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
 
+				imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam);
+
+				SetTo0(ValorDebitoL, ValorCreditoL, ValorBitcoinL, PrecioxKmL, ValorDebitoA, ValorCreditoA, ValorBitcoinA, PrecioxKmA, DiferenciaPrecio, PrecioAereolineas, PrecioLatam, Km);
+			}else{
+				printf("Ingrese datos en las opciones 1 y 2, o realize un carga forzada de  datos");
+			}
 			break;
 		case 4:
 
@@ -106,6 +116,7 @@ int main(void) {
 			Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
 
 			imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam);
+			SetTo0(ValorDebitoL, ValorCreditoL, ValorBitcoinL, PrecioxKmL, ValorDebitoA, ValorCreditoA, ValorBitcoinA, PrecioxKmA, DiferenciaPrecio, PrecioAereolineas, PrecioLatam, Km);
 
 			break;
 		}

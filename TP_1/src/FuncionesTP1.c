@@ -30,3 +30,19 @@ void imprimirresultados(float ValorDebitoL,float ValorCreditoL,float ValorBitcoi
 		printf("La diferencia de precio es : %.2f\n",DiferenciaPrecio);
 	printf("\n");
 }
+
+void SetTo0(float ValorDebitoL,float ValorCreditoL,float ValorBitcoinL,float PrecioxKmL,float ValorDebitoA,float ValorCreditoA,float ValorBitcoinA,float PrecioxKmA,float DiferenciaPrecio,float PrecioAereolineas,float PrecioLatam,float Km)
+		{
+		Km=0;
+		PrecioAereolineas=0;
+		PrecioLatam=0;
+		PrecioxKmA=0;
+		PrecioxKmL=0;
+		ValorDebitoA=0;
+		ValorCreditoA=0;
+		ValorBitcoinA=0;
+		ValorDebitoL=0;
+		ValorCreditoL=0;
+		ValorBitcoinL=0;
+		DiferenciaPrecio=0;
+		}

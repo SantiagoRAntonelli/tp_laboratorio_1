@@ -11,5 +11,6 @@
 #include <stdlib.h>
 
 void imprimirresultados(float ValorDebitoL,float ValorCreditoL,float ValorBitcoinL,float PrecioxKmL,float ValorDebitoA,float ValorCreditoA,float ValorBitcoinA,float PrecioxKmA,float DiferenciaPrecio,float PrecioAereolineas,float PrecioLatam);
+void SetTo0(float ValorDebitoL,float ValorCreditoL,float ValorBitcoinL,float PrecioxKmL,float ValorDebitoA,float ValorCreditoA,float ValorBitcoinA,float PrecioxKmA,float DiferenciaPrecio,float PrecioAereolineas,float PrecioLatam,float Km);
 
 #endif /* FUNCIONESTP1_H_ */
