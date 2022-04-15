@@ -10,11 +10,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int input_getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado);
-void imprirresultados(float ValorDebitoL,float ValorCreditoL,float ValorBitcoinL,float PrecioxKmL,float ValorDebitoA,float ValorCreditoA,float ValorBitcoinA,float PrecioxKmA,float DiferenciaPrecio);
-int getKm(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *NumeroIngresado);
-float Reglade3(float porcentaje,float valor);
-float cambiodedivisa(float valordecambio, float valor);
 
+float Reglade3(float porcentaje,float valor,float *presultado);
+float cambiodedivisa(float valordecambio, float valor,float *presultado);
+float Division(float valor1,float valor2,float *presultado);
+float Resta(float valor1,float valor2,float *presultado);
 
 #endif /* CALCULOS_H_ */
