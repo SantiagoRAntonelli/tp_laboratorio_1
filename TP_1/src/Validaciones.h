@@ -10,6 +10,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int input_getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado);
+int getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado);
 
 #endif /* VALIDACIONES_H_ */

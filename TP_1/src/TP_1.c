@@ -49,17 +49,17 @@ int main(void) {
 		scanf("%d",&opcion);
 		switch(opcion){
 		case 1:
-			KmVerificado=input_getFloat("\n Ingrese la cantidad de kilometros: ",REINTENTOS,MIN,DISTACIA_MAX_VIAJE,"\nValor fuera de rango\n",&Km);
+			KmVerificado= getFloat("\n Ingrese la cantidad de kilometros: ",REINTENTOS,MIN,DISTACIA_MAX_VIAJE,"\nValor fuera de rango\n",&Km);
 				if(KmVerificado==1){
 					puts("Error en la carga de datos");
 				}
 			break;
 		case 2:
-			PrecioA=input_getFloat("\nIngrese el valor del vuelo por Aereolineas: ",REINTENTOS,MIN,VALOR_MAX_VIAJE,"\nValor fuera de rango\n",&PrecioAereolineas);
+			PrecioA= getFloat("\nIngrese el valor del vuelo por Aereolineas: ",REINTENTOS,MIN,VALOR_MAX_VIAJE,"\nValor fuera de rango\n",&PrecioAereolineas);
 				if(PrecioA==1){
 						puts("Error en la carga de datos");
 					}
-				PrecioL=input_getFloat("\nIngrese el valor del vuelo por Latam: ",REINTENTOS,MIN,VALOR_MAX_VIAJE,"\nValor fuera de rango\n",&PrecioLatam);
+				PrecioL= getFloat("\nIngrese el valor del vuelo por Latam: ",REINTENTOS,MIN,VALOR_MAX_VIAJE,"\nValor fuera de rango\n",&PrecioLatam);
 				if(PrecioL==1){
 						puts("Error en la carga de datos");
 					}
@@ -72,17 +72,19 @@ int main(void) {
 				Division(PrecioAereolineas,Km,&PrecioxKmA);
 
 
-				//Latam
+			//Latam
 				Reglade3(PORCENTAJE_DEBITO,PrecioLatam,&ValorDebitoL);
 				Reglade3(PORCENTAJE_CREDITO,PrecioLatam,&ValorCreditoL);
 				cambiodedivisa(BITCOIN, PrecioLatam,&ValorBitcoinL);
 				Division(PrecioLatam,Km,&PrecioxKmL);
 
-
 				Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
+
 			break;
 		case 4:
+
 			imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam);
+
 			break;
 		case 5:
 			Km=KMDEFAULT;
@@ -94,17 +96,17 @@ int main(void) {
 				cambiodedivisa(BITCOIN, PrecioAereolineas,&ValorBitcoinA);
 				Division(PrecioAereolineas,Km,&PrecioxKmA);
 
-
-				//Latam
+			//Latam
 				Reglade3(PORCENTAJE_DEBITO,PrecioLatam,&ValorDebitoL);
 				Reglade3(PORCENTAJE_CREDITO,PrecioLatam,&ValorCreditoL);
 				cambiodedivisa(BITCOIN, PrecioLatam,&ValorBitcoinL);
 				Division(PrecioLatam,Km,&PrecioxKmL);
 
 
-				Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
+			Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
 
-				imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam);
+			imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam);
+
 			break;
 		}
 	}while(opcion!=6);
