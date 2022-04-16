@@ -29,6 +29,7 @@
 int main(void) {
 
 	setbuf(stdout,NULL);
+
 	int opcion;
 	float Km=0;
 	int KmVerificado;
@@ -68,7 +69,7 @@ int main(void) {
 
 			break;
 		case 3:
-
+			if(Km != 0 && PrecioAereolineas != 0 && PrecioLatam != 0){
 			//Aereolineas
 				Reglade3(PORCENTAJE_DEBITO,PrecioAereolineas,&ValorDebitoA);
 				Reglade3(PORCENTAJE_CREDITO,PrecioAereolineas,&ValorCreditoA);
@@ -85,15 +86,18 @@ int main(void) {
 				Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
 
 				puts("Calculos realizados");
-
+			}else{
+					puts("\n\nERROR\n\nPrimero debe ingresar datos en las opciones 1 y 2, o realize un carga forzada de datos\n\n");
+			}
 				//imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam,Km);
 
-				SetTo0(&ValorDebitoL, &ValorCreditoL, &ValorBitcoinL, &PrecioxKmL, &ValorDebitoA, &ValorCreditoA, &ValorBitcoinA, &PrecioxKmA, &DiferenciaPrecio, &PrecioAereolineas, &PrecioLatam, &Km);
+				//SetTo0(&ValorDebitoL, &ValorCreditoL, &ValorBitcoinL, &PrecioxKmL, &ValorDebitoA, &ValorCreditoA, &ValorBitcoinA, &PrecioxKmA, &DiferenciaPrecio, &PrecioAereolineas, &PrecioLatam, &Km);
 
 			break;
 		case 4:
 			if(Km != 0 && PrecioAereolineas != 0 && PrecioLatam != 0 && DiferenciaPrecio != 0){
 				imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam,Km);
+				SetTo0(&ValorDebitoL, &ValorCreditoL, &ValorBitcoinL, &PrecioxKmL, &ValorDebitoA, &ValorCreditoA, &ValorBitcoinA, &PrecioxKmA, &DiferenciaPrecio, &PrecioAereolineas, &PrecioLatam, &Km);
 			}else{
 				puts("\n\nERROR\n\nPrimero debe ingresar datos en las opciones 1 y 2 y ejecutar la opcion 3, o realize un carga forzada de datos\n\n");
 			}
@@ -128,11 +132,3 @@ int main(void) {
 
 	return EXIT_SUCCESS;
 }
-
-
-
-
-
-
-
-
