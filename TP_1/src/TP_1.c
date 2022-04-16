@@ -90,7 +90,7 @@ int main(void) {
 
 			break;
 		case 4:
-			if(Km != 0 && PrecioAereolineas != 0 && PrecioLatam != 0){
+			if(Km != 0 && PrecioAereolineas != 0 && PrecioLatam != 0 && DiferenciaPrecio != 0){
 				imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam,Km);
 			}else{
 				printf("\n\nERROR\n\nPrimero debe ingresar datos en las opciones 1 y 2 y ejecutar la opcion 3, o realize un carga forzada de datos\n\n");
