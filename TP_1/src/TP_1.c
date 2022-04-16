@@ -48,7 +48,7 @@ int main(void) {
 	float DiferenciaPrecio=0;
 
 	do{
-		getInt("1. Ingresar Kilómetros\n2. Ingresar Precio de Vuelos\n3. Calcular todos los costos\n4. Informar Resultados\n5. Carga forzada de datos\n6. Salir\n",REINTENTOS,1,6,"\nValor fuera de rango\n",&opcion);
+		getInt("\nMENU:\n1. Ingresar Kilómetros\n2. Ingresar Precio de Vuelos\n3. Calcular todos los costos\n4. Informar Resultados\n5. Carga forzada de datos\n6. Salir\n",REINTENTOS,1,6,"\nValor fuera de rango\n",&opcion);
 		switch(opcion){
 		case 1:
 			KmVerificado= getFloat("\n Ingrese la cantidad de kilometros",REINTENTOS,MIN_DISTANCIA,DISTACIA_MAX_VIAJE,"\nValor fuera de rango\n",&Km);
