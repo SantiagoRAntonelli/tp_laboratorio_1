@@ -11,5 +11,6 @@
 #include <stdlib.h>
 
 int getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado);
+int getInt(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], int *pNumeroingresado);
 
 #endif /* VALIDACIONES_H_ */
