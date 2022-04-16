@@ -6,7 +6,16 @@
  */
 
 #include "Validaciones.h"
-
+/// @fn int getFloat(char[], int, int, int, char[], float*)
+/// @brief Validacion de un valor float
+///
+/// @param mensaje (Mensaje inicial)
+/// @param reintentos (Cantidad de reintentos)
+/// @param minimo (Valor minimo aceptable)
+/// @param maximo (Valor maximo aceptable)
+/// @param mensajeError (Mensaje de error)
+/// @param pNumeroingresado (Valor ingresado a validar)
+/// @return (0=Operacion exitosa)
 int getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado)
 {
 	int rtn = 1;
@@ -36,6 +45,16 @@ int getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensaj
 	}
 	return rtn;
 }
+/// @fn int getInt(char[], int, int, int, char[], int*)
+/// @brief Validacion de un valor int
+///
+/// @param mensaje (Mensaje inicial)
+/// @param reintentos (Cantidad de reintentos)
+/// @param minimo (Valor minimo aceptable)
+/// @param maximo (Valor maximo aceptable)
+/// @param mensajeError (Mensaje de error)
+/// @param pNumeroingresado (Valor ingresado a validar)
+/// @return (0=Operacion exitosa)
 int getInt(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], int *pNumeroingresado)
 {
 	int rtn = 1;

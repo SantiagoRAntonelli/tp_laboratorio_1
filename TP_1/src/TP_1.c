@@ -84,16 +84,18 @@ int main(void) {
 
 				Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
 
+				puts("Calculos realizados");
+
 				//imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam,Km);
 
-				//SetTo0(ValorDebitoL, ValorCreditoL, ValorBitcoinL, PrecioxKmL, ValorDebitoA, ValorCreditoA, ValorBitcoinA, PrecioxKmA, DiferenciaPrecio, PrecioAereolineas, PrecioLatam, Km);
+				SetTo0(&ValorDebitoL, &ValorCreditoL, &ValorBitcoinL, &PrecioxKmL, &ValorDebitoA, &ValorCreditoA, &ValorBitcoinA, &PrecioxKmA, &DiferenciaPrecio, &PrecioAereolineas, &PrecioLatam, &Km);
 
 			break;
 		case 4:
 			if(Km != 0 && PrecioAereolineas != 0 && PrecioLatam != 0 && DiferenciaPrecio != 0){
 				imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam,Km);
 			}else{
-				printf("\n\nERROR\n\nPrimero debe ingresar datos en las opciones 1 y 2 y ejecutar la opcion 3, o realize un carga forzada de datos\n\n");
+				puts("\n\nERROR\n\nPrimero debe ingresar datos en las opciones 1 y 2 y ejecutar la opcion 3, o realize un carga forzada de datos\n\n");
 			}
 			break;
 		case 5:
@@ -116,7 +118,9 @@ int main(void) {
 			Resta(PrecioxKmA,PrecioxKmL,&DiferenciaPrecio);
 
 			imprimirresultados(ValorDebitoL,ValorCreditoL,ValorBitcoinL,PrecioxKmL,ValorDebitoA,ValorCreditoA,ValorBitcoinA,PrecioxKmA,DiferenciaPrecio,PrecioAereolineas,PrecioLatam,Km);
-			//SetTo0(ValorDebitoL, ValorCreditoL, ValorBitcoinL, PrecioxKmL, ValorDebitoA, ValorCreditoA, ValorBitcoinA, PrecioxKmA, DiferenciaPrecio, PrecioAereolineas, PrecioLatam, Km);
+
+			SetTo0(&ValorDebitoL, &ValorCreditoL, &ValorBitcoinL, &PrecioxKmL, &ValorDebitoA, &ValorCreditoA, &ValorBitcoinA, &PrecioxKmA, &DiferenciaPrecio, &PrecioAereolineas, &PrecioLatam, &Km);
+
 
 			break;
 		}
